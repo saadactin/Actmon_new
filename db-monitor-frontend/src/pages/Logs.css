@@ -1,0 +1,88 @@
+.logs-container {
+  padding: 2rem;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+}
+
+.logs-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #00ffff;
+  margin-bottom: 2rem;
+}
+
+.logs-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Database list */
+.logs-db-list {
+  flex: 1 1 200px;
+  background-color: #2c2c2c;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.db-item {
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.db-item:hover {
+  background-color: #1e40af; /* blue highlight */
+}
+
+.db-item.selected {
+  background-color: #0284c7;
+  font-weight: bold;
+}
+
+/* Logs table */
+.logs-table {
+  flex: 3 1 500px;
+  background-color: #2c2c2c;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  overflow-x: auto;
+}
+
+.logs-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.logs-table th,
+.logs-table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.logs-table th {
+  text-align: left;
+  color: #00ffff;
+}
+
+.status-up {
+  color: #4ade80; /* green */
+  font-weight: bold;
+}
+
+.status-down {
+  color: #f87171; /* red */
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logs-content {
+    flex-direction: column;
+  }
+}

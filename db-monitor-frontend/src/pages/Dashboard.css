@@ -1,0 +1,91 @@
+/* Container */
+.dashboard-container {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00ffff;
+}
+
+/* Grid layout */
+.database-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.db-card {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.db-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+/* Card Header */
+.db-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.db-card-header h2 {
+  font-size: 1.25rem;
+  color: #00ffff;
+}
+
+/* Status indicator circle */
+.status-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #555;
+}
+
+.status-indicator.up {
+  background-color: #4ade80; /* green */
+  border-color: #4ade80;
+}
+
+.status-indicator.down {
+  background-color: #f87171; /* red */
+  border-color: #f87171;
+}
+
+.status-indicator.unknown {
+  background-color: #facc15; /* yellow */
+  border-color: #facc15;
+}
+
+/* Card body */
+.db-card-body p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.status-text {
+  font-weight: bold;
+  margin-left: 0.25rem;
+  color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .database-grid {
+    grid-template-columns: 1fr;
+  }
+}
