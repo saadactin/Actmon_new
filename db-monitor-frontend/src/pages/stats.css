@@ -1,0 +1,50 @@
+.stats-container {
+  max-width: 1000px;
+  margin: 100px auto 50px; /* 100px for navbar offset */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  gap: 30px;
+}
+
+.db-list {
+  width: 30%;
+}
+
+.db-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.db-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.db-btn:hover {
+  background-color: #b0c4f2;
+}
+
+.db-btn.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.db-stats {
+  width: 70%;
+}
+
+.stats-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}

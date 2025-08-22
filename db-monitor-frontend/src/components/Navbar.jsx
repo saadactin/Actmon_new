@@ -28,12 +28,26 @@ export default function Navbar() {
                 to="/" 
                 className={location.pathname === '/' ? 'active' : ''}
                 onClick={() => setMenuOpen(false)}
-              >Dashboard</Link>
+              >
+                Dashboard
+              </Link>
+              
               <Link 
                 to="/logs" 
                 className={location.pathname === '/logs' ? 'active' : ''}
                 onClick={() => setMenuOpen(false)}
-              >Logs</Link>
+              >
+                Logs
+              </Link>
+
+              {/* Stats accessible to all logged-in users */}
+              <Link 
+                to="/stats"
+                className={location.pathname === '/stats' ? 'active' : ''}
+                onClick={() => setMenuOpen(false)}
+              >
+                Stats
+              </Link>
 
               {user.role === "admin" && (
                 <>
@@ -41,12 +55,16 @@ export default function Navbar() {
                     to="/add" 
                     className={location.pathname === '/add' ? 'active' : ''}
                     onClick={() => setMenuOpen(false)}
-                  >Add DB</Link>
+                  >
+                    Add DB
+                  </Link>
                   <Link 
                     to="/add-user" 
                     className={location.pathname === '/add-user' ? 'active' : ''}
                     onClick={() => setMenuOpen(false)}
-                  >Add User</Link>
+                  >
+                    Add User
+                  </Link>
                 </>
               )}
 

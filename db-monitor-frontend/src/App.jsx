@@ -5,8 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import AddDatabase from "./pages/AddDatabase";
 import DatabaseLogs from "./pages/Logs";
 import Login from "./pages/Login";
-import AddUser from "./pages/AddUser"; // ✅ import AddUser
+import AddUser from "./pages/AddUser";
 import ProtectedRoute from "./components/ProtectedRoute";
+import DatabaseStats from "./pages/DatabaseStats";
 
 function App() {
   return (
@@ -16,43 +17,14 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
 
-          {/* Dashboard and Logs accessible to all logged-in users */}
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/logs"
-            element={
-              <ProtectedRoute>
-                <DatabaseLogs />
-              </ProtectedRoute>
-            }
-          />
+          {/* Dashboard, Logs, Stats accessible to all logged-in users */}
+          <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/logs" element={<ProtectedRoute><DatabaseLogs /></ProtectedRoute>} />
+          <Route path="/stats" element={<ProtectedRoute><DatabaseStats /></ProtectedRoute>} />
 
-          {/* AddDatabase only for admin */}
-          <Route
-            path="/add"
-            element={
-              <ProtectedRoute adminOnly={true}>
-                <AddDatabase />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* AddUser only for admin */}
-          <Route
-            path="/add-user"
-            element={
-              <ProtectedRoute adminOnly={true}>
-                <AddUser />
-              </ProtectedRoute>
-            }
-          />
+          {/* Admin-only */}
+          <Route path="/add" element={<ProtectedRoute adminOnly={true}><AddDatabase /></ProtectedRoute>} />
+          <Route path="/add-user" element={<ProtectedRoute adminOnly={true}><AddUser /></ProtectedRoute>} />
         </Routes>
       </Router>
     </AuthProvider>
