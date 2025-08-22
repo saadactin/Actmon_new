@@ -1,62 +1,99 @@
+/* Navbar container */
 .navbar {
+  background-color: #2563eb;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Reduce padding by ~30% */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.35rem 0.7rem; /* was 0.5rem 1rem */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #4a5f8f; /* dark blue/technical */
-  color: #00ffff; /* cyan accent */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
+/* Slightly smaller title */
 .navbar-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* was 1.5rem */
   font-weight: bold;
 }
 
+/* Links container */
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.7rem; /* reduced gap */
 }
 
-.navbar-link {
-  color: #00ffff;
+.navbar-links a {
+  color: white;
   text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.2s;
+  padding: 0.35rem 0.5rem; /* was 0.5rem 0.75rem */
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
-.navbar-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #00ffff;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -2px;
-  left: 0;
+.navbar-links a:hover {
+  background-color: #1e40af;
 }
 
-.navbar-link:hover {
-  color: #7fffd4; /* lighter cyan */
+.navbar-links a.active {
+  background-color: #1e3a8a;
+  font-weight: bold;
 }
 
-.navbar-link:hover::after {
-  width: 100%;
+/* Logout button */
+.logout-btn {
+  background-color: #dc2626;
+  border: none;
+  padding: 0.35rem 0.5rem; /* was 0.5rem 0.75rem */
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .navbar {
+.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.3rem; /* slightly smaller */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2563eb;
     flex-direction: column;
-    gap: 0.5rem;
+    width: 200px;
+    padding: 0.7rem; /* slightly smaller padding */
+    display: none;
   }
 
-  .navbar-links {
-    gap: 1rem;
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
