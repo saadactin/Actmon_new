@@ -7,6 +7,7 @@ import { createAdmin } from "./controllers/authController.js";
 import authRoutes from "./routes/authRoutes.js"; // ✅ ADD THIS LINE
 import userRoutes from "./routes/userRoutes.js";
 import statsRoutes from "./routes/statsRoutes.js";
+import performanceRoutes from "./routes/performanceRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -27,6 +28,7 @@ app.use("/api/logs", logRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes); // ✅ must match /api/users/create
 app.use("/api/stats", statsRoutes);
+app.use("/api/performance", performanceRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);

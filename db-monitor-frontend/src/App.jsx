@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import AddUser from "./pages/AddUser";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DatabaseStats from "./pages/DatabaseStats";
+import PerformanceMetrics from "./pages/PerformanceMetrics";
 
 function App() {
   return (
@@ -21,10 +22,18 @@ function App() {
           <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/logs" element={<ProtectedRoute><DatabaseLogs /></ProtectedRoute>} />
           <Route path="/stats" element={<ProtectedRoute><DatabaseStats /></ProtectedRoute>} />
-
+<Route
+  path="/performance"
+  element={
+    <ProtectedRoute>
+      <PerformanceMetrics />
+    </ProtectedRoute>
+  }
+/>
           {/* Admin-only */}
           <Route path="/add" element={<ProtectedRoute adminOnly={true}><AddDatabase /></ProtectedRoute>} />
           <Route path="/add-user" element={<ProtectedRoute adminOnly={true}><AddUser /></ProtectedRoute>} />
+
         </Routes>
       </Router>
     </AuthProvider>

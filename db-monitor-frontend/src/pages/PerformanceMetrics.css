@@ -1,0 +1,61 @@
+.page-container {
+  max-width: 1000px;
+  margin: 80px auto 20px; /* 80px to avoid navbar overlap */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.performance-container {
+  display: flex;
+  gap: 20px;
+}
+
+.db-list {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.db-list h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.db-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.db-list li button {
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.db-list li button:hover {
+  background-color: #e0e0e0;
+}
+
+.metrics-display {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.metrics-display h2 {
+  margin-top: 0;
+}
+
+.metrics-display p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
